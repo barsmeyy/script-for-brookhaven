@@ -1,0 +1,1509 @@
+local UserInputService = game:GetService("UserInputService")
+local plr = game.Players.LocalPlayer
+local dragging
+local dragInput
+local dragStart
+local startPos
+local Acid1 = 24114402
+local Acid2 = 24112667
+local Acid3 = 24114402
+local Acid4 = 33070696
+
+local Main = Instance.new("ScreenGui")
+local Draggable = Instance.new("Frame")
+local HideUIButton = Instance.new("ImageButton")
+local UICorner = Instance.new("UICorner")
+local CloseUIButton = Instance.new("ImageButton")
+local UICorner_2 = Instance.new("UICorner")
+local PanelCorner = Instance.new("UICorner")
+local GuiElements = Instance.new("Folder")
+local WalkSpeedText = Instance.new("TextLabel")
+local Main_2 = Instance.new("Frame")
+local ImageLabel = Instance.new("ImageLabel")
+local UICorner_3 = Instance.new("UICorner")
+local UICorner_4 = Instance.new("UICorner")
+local UICorner_5 = Instance.new("UICorner")
+local FunctionsLabel = Instance.new("TextLabel")
+local UICorner_6 = Instance.new("UICorner")
+local GetGunTip = Instance.new("TextLabel")
+local UICorner_7 = Instance.new("UICorner")
+local CharacterLabel = Instance.new("TextLabel")
+local UICorner_8 = Instance.new("UICorner")
+local SoundsLabel = Instance.new("TextLabel")
+local UICorner_9 = Instance.new("UICorner")
+local AvatarLabel = Instance.new("TextLabel")
+local UICorner_10 = Instance.new("UICorner")
+local JumpHeightText = Instance.new("TextLabel")
+local GetGun = Instance.new("TextButton")
+local UICorner_11 = Instance.new("UICorner")
+local SpeedAmout = Instance.new("TextBox")
+local UICorner_12 = Instance.new("UICorner")
+local JumpAmout = Instance.new("TextBox")
+local UICorner_13 = Instance.new("UICorner")
+local InvisGuiButton = Instance.new("TextButton")
+local UICorner_14 = Instance.new("UICorner")
+local ScaryBodyButton = Instance.new("TextButton")
+local UICorner_15 = Instance.new("UICorner")
+local AcsSoundOnButton = Instance.new("TextButton")
+local UICorner_16 = Instance.new("UICorner")
+local Scream1SoundButton = Instance.new("TextButton")
+local UICorner_17 = Instance.new("UICorner")
+local Scream2SoundButton = Instance.new("TextButton")
+local UICorner_18 = Instance.new("UICorner")
+local ScaryHeadButton = Instance.new("TextButton")
+local UICorner_19 = Instance.new("UICorner")
+local YieldButton = Instance.new("TextButton")
+local UICorner_20 = Instance.new("UICorner")
+local V1VersionButton = Instance.new("TextButton")
+local UICorner_21 = Instance.new("UICorner")
+local AcsSoundOffButton = Instance.new("TextButton")
+local UICorner_22 = Instance.new("UICorner")
+local TeleportButton = Instance.new("TextButton")
+local UICorner_23 = Instance.new("UICorner")
+local DexButton = Instance.new("TextButton")
+local UICorner_24 = Instance.new("UICorner")
+local LaughSoundButton = Instance.new("TextButton")
+local UICorner_25 = Instance.new("UICorner")
+local BellSoundButton = Instance.new("TextButton")
+local UICorner_26 = Instance.new("UICorner")
+local SizeButton = Instance.new("TextButton")
+local UICorner_27 = Instance.new("UICorner")
+local Version = Instance.new("TextLabel")
+local UICorner_28 = Instance.new("UICorner")
+local AhhSoundButton = Instance.new("TextButton")
+local UICorner_29 = Instance.new("UICorner")
+local DabAnimButton = Instance.new("TextButton")
+local UICorner_30 = Instance.new("UICorner")
+local OrangeAnimButton = Instance.new("TextButton")
+local UICorner_31 = Instance.new("UICorner")
+local HeadAnimButton = Instance.new("TextButton")
+local UICorner_32 = Instance.new("UICorner")
+local Credit = Instance.new("TextLabel")
+local UICorner_33 = Instance.new("UICorner")
+
+--Properties:
+
+Main.Name = "Main"
+Main.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Main.ResetOnSpawn = false
+
+Draggable.Name = "Draggable"
+Draggable.Parent = Main
+Draggable.BackgroundColor3 = Color3.fromRGB(36, 0, 0)
+Draggable.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Draggable.BorderSizePixel = 0
+Draggable.Position = UDim2.new(0.142478466, 0, 0.183470502, 0)
+Draggable.Size = UDim2.new(0, 442, 0, 36)
+
+HideUIButton.Name = "HideUIButton"
+HideUIButton.Parent = Draggable
+HideUIButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HideUIButton.BackgroundTransparency = 1.000
+HideUIButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HideUIButton.BorderSizePixel = 0
+HideUIButton.Position = UDim2.new(0.834841609, 0, -0.027777778, 0)
+HideUIButton.Size = UDim2.new(0, 37, 0, 36)
+HideUIButton.Image = "rbxassetid://11622919444"
+
+UICorner.Parent = HideUIButton
+
+CloseUIButton.Name = "CloseUIButton"
+CloseUIButton.Parent = Draggable
+CloseUIButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CloseUIButton.BackgroundTransparency = 1.000
+CloseUIButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CloseUIButton.BorderSizePixel = 0
+CloseUIButton.Position = UDim2.new(0.918552041, 0, 0.0833333358, 0)
+CloseUIButton.Size = UDim2.new(0, 29, 0, 29)
+CloseUIButton.Image = "http://www.roblox.com/asset/?id=12198387482"
+
+UICorner_2.Parent = CloseUIButton
+
+PanelCorner.Name = "PanelCorner"
+PanelCorner.Parent = Draggable
+
+GuiElements.Name = "GuiElements"
+GuiElements.Parent = Draggable
+
+WalkSpeedText.Name = "WalkSpeedText"
+WalkSpeedText.Parent = GuiElements
+WalkSpeedText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WalkSpeedText.BackgroundTransparency = 1.000
+WalkSpeedText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+WalkSpeedText.BorderSizePixel = 0
+WalkSpeedText.Position = UDim2.new(0.814479649, 0, 2.52777767, 0)
+WalkSpeedText.Size = UDim2.new(0, 54, 0, 25)
+WalkSpeedText.ZIndex = 2
+WalkSpeedText.Font = Enum.Font.SourceSansBold
+WalkSpeedText.Text = "SPEED"
+WalkSpeedText.TextColor3 = Color3.fromRGB(255, 0, 0)
+WalkSpeedText.TextScaled = true
+WalkSpeedText.TextSize = 14.000
+WalkSpeedText.TextWrapped = true
+
+Main_2.Name = "Main"
+Main_2.Parent = GuiElements
+Main_2.BackgroundColor3 = Color3.fromRGB(65, 9, 9)
+Main_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Main_2.BorderSizePixel = 0
+Main_2.Position = UDim2.new(-0.000268375181, 0, 0.977366149, 0)
+Main_2.Size = UDim2.new(0, 443, 0, 352)
+
+ImageLabel.Parent = Main_2
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(0.284424305, 0, -0.105113633, 0)
+ImageLabel.Size = UDim2.new(0, 40, 0, 37)
+ImageLabel.Image = "rbxassetid://8327012052"
+ImageLabel.ImageTransparency = 0.470
+
+UICorner_3.Parent = ImageLabel
+
+UICorner_4.Parent = Main_2
+FunctionsLabel.Name = "FunctionsLabel"
+FunctionsLabel.Parent = GuiElements
+FunctionsLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FunctionsLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FunctionsLabel.BorderSizePixel = 0
+FunctionsLabel.Position = UDim2.new(0.538461566, 0, 1.38888884, 0)
+FunctionsLabel.Size = UDim2.new(0, 94, 0, 29)
+FunctionsLabel.Font = Enum.Font.SourceSans
+FunctionsLabel.Text = "Other functions"
+FunctionsLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+FunctionsLabel.TextScaled = true
+FunctionsLabel.TextSize = 14.000
+FunctionsLabel.TextWrapped = true
+
+UICorner_6.Parent = FunctionsLabel
+
+GetGunTip.Name = "GetGunTip"
+GetGunTip.Parent = GuiElements
+GetGunTip.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GetGunTip.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GetGunTip.BorderSizePixel = 0
+GetGunTip.Position = UDim2.new(0.0429864265, 0, 9.83333302, 0)
+GetGunTip.Size = UDim2.new(0, 121, 0, 13)
+GetGunTip.Font = Enum.Font.SourceSans
+GetGunTip.Text = "Take gun before playing sounds"
+GetGunTip.TextColor3 = Color3.fromRGB(0, 0, 0)
+GetGunTip.TextScaled = true
+GetGunTip.TextSize = 14.000
+GetGunTip.TextWrapped = true
+
+UICorner_7.Parent = GetGunTip
+
+CharacterLabel.Name = "CharacterLabel"
+CharacterLabel.Parent = GuiElements
+CharacterLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CharacterLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CharacterLabel.BorderSizePixel = 0
+CharacterLabel.Position = UDim2.new(0.769230783, 0, 1.38888884, 0)
+CharacterLabel.Size = UDim2.new(0, 94, 0, 29)
+CharacterLabel.Font = Enum.Font.SourceSans
+CharacterLabel.Text = "Character"
+CharacterLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+CharacterLabel.TextScaled = true
+CharacterLabel.TextSize = 14.000
+CharacterLabel.TextWrapped = true
+
+UICorner_8.Parent = CharacterLabel
+
+SoundsLabel.Name = "SoundsLabel"
+SoundsLabel.Parent = GuiElements
+SoundsLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SoundsLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SoundsLabel.BorderSizePixel = 0
+SoundsLabel.Position = UDim2.new(0.0746606365, 0, 1.38888884, 0)
+SoundsLabel.Size = UDim2.new(0, 94, 0, 29)
+SoundsLabel.Font = Enum.Font.SourceSans
+SoundsLabel.Text = "Sounds"
+SoundsLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+SoundsLabel.TextScaled = true
+SoundsLabel.TextSize = 14.000
+SoundsLabel.TextWrapped = true
+
+UICorner_9.Parent = SoundsLabel
+
+AvatarLabel.Name = "AvatarLabel"
+AvatarLabel.Parent = GuiElements
+AvatarLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AvatarLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AvatarLabel.BorderSizePixel = 0
+AvatarLabel.Position = UDim2.new(0.314479649, 0, 1.38888884, 0)
+AvatarLabel.Size = UDim2.new(0, 94, 0, 29)
+AvatarLabel.Font = Enum.Font.SourceSans
+AvatarLabel.Text = "Avatar"
+AvatarLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+AvatarLabel.TextScaled = true
+AvatarLabel.TextSize = 14.000
+AvatarLabel.TextWrapped = true
+
+UICorner_10.Parent = AvatarLabel
+
+JumpHeightText.Name = "JumpHeightText"
+JumpHeightText.Parent = GuiElements
+JumpHeightText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+JumpHeightText.BackgroundTransparency = 1.000
+JumpHeightText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+JumpHeightText.BorderSizePixel = 0
+JumpHeightText.Position = UDim2.new(0.79411763, 0, 4.30555534, 0)
+JumpHeightText.Size = UDim2.new(0, 70, 0, 25)
+JumpHeightText.Font = Enum.Font.SourceSansBold
+JumpHeightText.Text = "JUMP HEIGHT"
+JumpHeightText.TextColor3 = Color3.fromRGB(255, 0, 0)
+JumpHeightText.TextScaled = true
+JumpHeightText.TextSize = 14.000
+JumpHeightText.TextWrapped = true
+
+GetGun.Name = "GetGun"
+GetGun.Parent = GuiElements
+GetGun.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GetGun.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GetGun.BorderSizePixel = 0
+GetGun.Position = UDim2.new(0.0429864265, 0, 8.80555534, 0)
+GetGun.Size = UDim2.new(0, 121, 0, 30)
+GetGun.Font = Enum.Font.SourceSans
+GetGun.Text = "Get Sound Gun"
+GetGun.TextColor3 = Color3.fromRGB(0, 0, 0)
+GetGun.TextSize = 14.000
+
+UICorner_11.Parent = GetGun
+
+SpeedAmout.Name = "SpeedAmout"
+SpeedAmout.Parent = GuiElements
+SpeedAmout.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+SpeedAmout.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SpeedAmout.BorderSizePixel = 0
+SpeedAmout.Position = UDim2.new(0.772080481, 0, 3.21496248, 0)
+SpeedAmout.Size = UDim2.new(0, 88, 0, 32)
+SpeedAmout.ClearTextOnFocus = false
+SpeedAmout.Font = Enum.Font.SourceSans
+SpeedAmout.Text = "16 (default)"
+SpeedAmout.TextColor3 = Color3.fromRGB(255, 255, 255)
+SpeedAmout.TextScaled = true
+SpeedAmout.TextSize = 14.000
+SpeedAmout.TextWrapped = true
+
+UICorner_12.Parent = SpeedAmout
+
+JumpAmout.Name = "JumpAmout"
+JumpAmout.Parent = GuiElements
+JumpAmout.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+JumpAmout.BorderColor3 = Color3.fromRGB(0, 0, 0)
+JumpAmout.BorderSizePixel = 0
+JumpAmout.Position = UDim2.new(0.772080481, 0, 5.02051783, 0)
+JumpAmout.Size = UDim2.new(0, 88, 0, 32)
+JumpAmout.ClearTextOnFocus = false
+JumpAmout.Font = Enum.Font.SourceSans
+JumpAmout.Text = "7.2 (default)"
+JumpAmout.TextColor3 = Color3.fromRGB(255, 255, 255)
+JumpAmout.TextScaled = true
+JumpAmout.TextSize = 14.000
+JumpAmout.TextWrapped = true
+
+UICorner_13.Parent = JumpAmout
+
+InvisGuiButton.Name = "InvisGuiButton"
+InvisGuiButton.Parent = GuiElements
+InvisGuiButton.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+InvisGuiButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+InvisGuiButton.BorderSizePixel = 0
+InvisGuiButton.Position = UDim2.new(0.563348413, 0, 5.02777767, 0)
+InvisGuiButton.Size = UDim2.new(0, 72, 0, 35)
+InvisGuiButton.Font = Enum.Font.SourceSansBold
+InvisGuiButton.Text = "Invisible "
+InvisGuiButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+InvisGuiButton.TextScaled = true
+InvisGuiButton.TextSize = 14.000
+InvisGuiButton.TextWrapped = true
+
+UICorner_14.Parent = InvisGuiButton
+
+ScaryBodyButton.Name = "ScaryBodyButton"
+ScaryBodyButton.Parent = GuiElements
+ScaryBodyButton.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+ScaryBodyButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScaryBodyButton.BorderSizePixel = 0
+ScaryBodyButton.Position = UDim2.new(0.316742092, 0, 7.41666651, 0)
+ScaryBodyButton.Size = UDim2.new(0, 93, 0, 35)
+ScaryBodyButton.Font = Enum.Font.SourceSansBold
+ScaryBodyButton.Text = "scary body"
+ScaryBodyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScaryBodyButton.TextScaled = true
+ScaryBodyButton.TextSize = 14.000
+ScaryBodyButton.TextWrapped = true
+
+UICorner_15.Parent = ScaryBodyButton
+
+AcsSoundOnButton.Name = "AcsSoundOnButton"
+AcsSoundOnButton.Parent = GuiElements
+AcsSoundOnButton.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+AcsSoundOnButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AcsSoundOnButton.BorderSizePixel = 0
+AcsSoundOnButton.Position = UDim2.new(0.316742092, 0, 2.52777767, 0)
+AcsSoundOnButton.Size = UDim2.new(0, 93, 0, 35)
+AcsSoundOnButton.Font = Enum.Font.SourceSansBold
+AcsSoundOnButton.Text = "All sound accesories"
+AcsSoundOnButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+AcsSoundOnButton.TextScaled = true
+AcsSoundOnButton.TextSize = 14.000
+AcsSoundOnButton.TextWrapped = true
+
+UICorner_16.Parent = AcsSoundOnButton
+
+Scream1SoundButton.Name = "Scream1SoundButton"
+Scream1SoundButton.Parent = GuiElements
+Scream1SoundButton.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+Scream1SoundButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Scream1SoundButton.BorderSizePixel = 0
+Scream1SoundButton.Position = UDim2.new(0.0746606365, 0, 5.02777767, 0)
+Scream1SoundButton.Size = UDim2.new(0, 93, 0, 35)
+Scream1SoundButton.Font = Enum.Font.SourceSansBold
+Scream1SoundButton.Text = "Scream1"
+Scream1SoundButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+Scream1SoundButton.TextScaled = true
+Scream1SoundButton.TextSize = 14.000
+Scream1SoundButton.TextWrapped = true
+
+UICorner_17.Parent = Scream1SoundButton
+
+Scream2SoundButton.Name = "Scream2SoundButton"
+Scream2SoundButton.Parent = GuiElements
+Scream2SoundButton.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+Scream2SoundButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Scream2SoundButton.BorderSizePixel = 0
+Scream2SoundButton.Position = UDim2.new(0.0746606365, 0, 6.19444466, 0)
+Scream2SoundButton.Size = UDim2.new(0, 93, 0, 35)
+Scream2SoundButton.Font = Enum.Font.SourceSansBold
+Scream2SoundButton.Text = "Scream2"
+Scream2SoundButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+Scream2SoundButton.TextScaled = true
+Scream2SoundButton.TextSize = 14.000
+Scream2SoundButton.TextWrapped = true
+
+UICorner_18.Parent = Scream2SoundButton
+
+ScaryHeadButton.Name = "ScaryHeadButton"
+ScaryHeadButton.Parent = GuiElements
+ScaryHeadButton.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+ScaryHeadButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScaryHeadButton.BorderSizePixel = 0
+ScaryHeadButton.Position = UDim2.new(0.316742092, 0, 6.19444466, 0)
+ScaryHeadButton.Size = UDim2.new(0, 93, 0, 35)
+ScaryHeadButton.Font = Enum.Font.SourceSansBold
+ScaryHeadButton.Text = "Scary head"
+ScaryHeadButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScaryHeadButton.TextScaled = true
+ScaryHeadButton.TextSize = 14.000
+ScaryHeadButton.TextWrapped = true
+
+UICorner_19.Parent = ScaryHeadButton
+
+YieldButton.Name = "YieldButton"
+YieldButton.Parent = GuiElements
+YieldButton.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+YieldButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+YieldButton.BorderSizePixel = 0
+YieldButton.Position = UDim2.new(0.563348413, 0, 2.52777767, 0)
+YieldButton.Size = UDim2.new(0, 72, 0, 35)
+YieldButton.Font = Enum.Font.SourceSansBold
+YieldButton.Text = "Infinity Yield"
+YieldButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+YieldButton.TextScaled = true
+YieldButton.TextSize = 14.000
+YieldButton.TextWrapped = true
+
+UICorner_20.Parent = YieldButton
+
+V1VersionButton.Name = "V1VersionButton"
+V1VersionButton.Parent = GuiElements
+V1VersionButton.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+V1VersionButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+V1VersionButton.BorderSizePixel = 0
+V1VersionButton.Position = UDim2.new(0.563348413, 0, 7.41666651, 0)
+V1VersionButton.Size = UDim2.new(0, 72, 0, 35)
+V1VersionButton.Font = Enum.Font.SourceSansBold
+V1VersionButton.Text = "V1 version"
+V1VersionButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+V1VersionButton.TextScaled = true
+V1VersionButton.TextSize = 14.000
+V1VersionButton.TextWrapped = true
+
+UICorner_21.Parent = V1VersionButton
+
+AcsSoundOffButton.Name = "AcsSoundOffButton"
+AcsSoundOffButton.Parent = GuiElements
+AcsSoundOffButton.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+AcsSoundOffButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AcsSoundOffButton.BorderSizePixel = 0
+AcsSoundOffButton.Position = UDim2.new(0.316742092, 0, 3.80555558, 0)
+AcsSoundOffButton.Size = UDim2.new(0, 93, 0, 35)
+AcsSoundOffButton.Font = Enum.Font.SourceSansBold
+AcsSoundOffButton.Text = "Sound accesories remove"
+AcsSoundOffButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+AcsSoundOffButton.TextScaled = true
+AcsSoundOffButton.TextSize = 14.000
+AcsSoundOffButton.TextWrapped = true
+
+UICorner_22.Parent = AcsSoundOffButton
+
+TeleportButton.Name = "TeleportButton"
+TeleportButton.Parent = GuiElements
+TeleportButton.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+TeleportButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TeleportButton.BorderSizePixel = 0
+TeleportButton.Position = UDim2.new(0.563348413, 0, 6.19444466, 0)
+TeleportButton.Size = UDim2.new(0, 72, 0, 35)
+TeleportButton.Font = Enum.Font.SourceSansBold
+TeleportButton.Text = "Teleport UI"
+TeleportButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TeleportButton.TextScaled = true
+TeleportButton.TextSize = 14.000
+TeleportButton.TextWrapped = true
+
+UICorner_23.Parent = TeleportButton
+
+DexButton.Name = "DexButton"
+DexButton.Parent = GuiElements
+DexButton.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+DexButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DexButton.BorderSizePixel = 0
+DexButton.Position = UDim2.new(0.563348413, 0, 3.80555558, 0)
+DexButton.Size = UDim2.new(0, 72, 0, 35)
+DexButton.Font = Enum.Font.SourceSansBold
+DexButton.Text = "Dex Explorer"
+DexButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+DexButton.TextScaled = true
+DexButton.TextSize = 14.000
+DexButton.TextWrapped = true
+
+UICorner_24.Parent = DexButton
+
+LaughSoundButton.Name = "LaughSoundButton"
+LaughSoundButton.Parent = GuiElements
+LaughSoundButton.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+LaughSoundButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+LaughSoundButton.BorderSizePixel = 0
+LaughSoundButton.Position = UDim2.new(0.0746606365, 0, 3.80555558, 0)
+LaughSoundButton.Size = UDim2.new(0, 93, 0, 35)
+LaughSoundButton.Font = Enum.Font.SourceSansBold
+LaughSoundButton.Text = "Child Laugh"
+LaughSoundButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+LaughSoundButton.TextScaled = true
+LaughSoundButton.TextSize = 14.000
+LaughSoundButton.TextWrapped = true
+
+UICorner_25.Parent = LaughSoundButton
+
+BellSoundButton.Name = "BellSoundButton"
+BellSoundButton.Parent = GuiElements
+BellSoundButton.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+BellSoundButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BellSoundButton.BorderSizePixel = 0
+BellSoundButton.Position = UDim2.new(0.0746606365, 0, 2.52777767, 0)
+BellSoundButton.Size = UDim2.new(0, 93, 0, 35)
+BellSoundButton.Font = Enum.Font.SourceSansBold
+BellSoundButton.Text = "Bell"
+BellSoundButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+BellSoundButton.TextScaled = true
+BellSoundButton.TextSize = 14.000
+BellSoundButton.TextWrapped = true
+
+UICorner_26.Parent = BellSoundButton
+
+SizeButton.Name = "SizeButton"
+SizeButton.Parent = GuiElements
+SizeButton.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+SizeButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SizeButton.BorderSizePixel = 0
+SizeButton.Position = UDim2.new(0.316742092, 0, 5.02777767, 0)
+SizeButton.Size = UDim2.new(0, 93, 0, 35)
+SizeButton.Font = Enum.Font.SourceSansBold
+SizeButton.Text = "0.5 size"
+SizeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SizeButton.TextScaled = true
+SizeButton.TextSize = 14.000
+SizeButton.TextWrapped = true
+
+UICorner_27.Parent = SizeButton
+
+Version.Name = "Version"
+Version.Parent = GuiElements
+Version.BackgroundColor3 = Color3.fromRGB(36, 0, 0)
+Version.BackgroundTransparency = 1.000
+Version.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Version.BorderSizePixel = 0
+Version.Position = UDim2.new(0.316742092, 0, 9.52777767, 0)
+Version.Size = UDim2.new(0, 134, 0, 35)
+Version.Font = Enum.Font.SourceSans
+Version.Text = "V2"
+Version.TextColor3 = Color3.fromRGB(81, 0, 0)
+Version.TextScaled = true
+Version.TextSize = 14.000
+Version.TextWrapped = true
+
+UICorner_28.Parent = Version
+
+AhhSoundButton.Name = "AhhSoundButton"
+AhhSoundButton.Parent = GuiElements
+AhhSoundButton.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+AhhSoundButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AhhSoundButton.BorderSizePixel = 0
+AhhSoundButton.Position = UDim2.new(0.0746606365, 0, 7.41666651, 0)
+AhhSoundButton.Size = UDim2.new(0, 93, 0, 35)
+AhhSoundButton.Font = Enum.Font.SourceSansBold
+AhhSoundButton.Text = "Ahh ~"
+AhhSoundButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+AhhSoundButton.TextScaled = true
+AhhSoundButton.TextSize = 14.000
+AhhSoundButton.TextWrapped = true
+
+UICorner_29.Parent = AhhSoundButton
+
+DabAnimButton.Name = "DabAnimButton"
+DabAnimButton.Parent = GuiElements
+DabAnimButton.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+DabAnimButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DabAnimButton.BorderSizePixel = 0
+DabAnimButton.Position = UDim2.new(0.764705896, 0, 8.5, 0)
+DabAnimButton.Size = UDim2.new(0, 93, 0, 35)
+DabAnimButton.Font = Enum.Font.SourceSansBold
+DabAnimButton.Text = "Dab"
+DabAnimButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+DabAnimButton.TextScaled = true
+DabAnimButton.TextSize = 14.000
+DabAnimButton.TextWrapped = true
+
+UICorner_30.Parent = DabAnimButton
+
+OrangeAnimButton.Name = "OrangeAnimButton"
+OrangeAnimButton.Parent = GuiElements
+OrangeAnimButton.BackgroundColor3 = Color3.fromRGB(131, 0, 0)
+OrangeAnimButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OrangeAnimButton.BorderSizePixel = 0
+OrangeAnimButton.Position = UDim2.new(0.764705896, 0, 9.69444466, 0)
+OrangeAnimButton.Size = UDim2.new(0, 93, 0, 35)
+OrangeAnimButton.Font = Enum.Font.SourceSansBold
+OrangeAnimButton.Text = "Orange Justice"
+OrangeAnimButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+OrangeAnimButton.TextScaled = true
+OrangeAnimButton.TextSize = 14.000
+OrangeAnimButton.TextWrapped = true
+
+UICorner_31.Parent = OrangeAnimButton
+
+
+Credit.Name = "Credit"
+Credit.Parent = Draggable
+Credit.BackgroundColor3 = Color3.fromRGB(36, 0, 0)
+Credit.BackgroundTransparency = 1.000
+Credit.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Credit.BorderSizePixel = 0
+Credit.Size = UDim2.new(0, 134, 0, 35)
+Credit.Font = Enum.Font.SourceSans
+Credit.Text = "written by yalovic"
+Credit.TextColor3 = Color3.fromRGB(61, 0, 0)
+Credit.TextScaled = true
+Credit.TextSize = 14.000
+Credit.TextWrapped = true
+
+UICorner_33.Parent = Credit
+
+-- Functions
+local gui = Draggable
+task.wait()
+local Elements = Draggable:FindFirstChild("GuiElements"):GetChildren()
+local function update(input)
+	local delta = input.Position - dragStart
+	gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+end
+
+gui.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+		dragging = true
+		dragStart = input.Position
+		startPos = gui.Position
+
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragging = false
+			end
+		end)
+	end
+end)
+
+gui.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+		dragInput = input
+	end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+	if input == dragInput and dragging then
+		if gui.Visible then
+			update(input)
+		end
+	end
+end)
+
+local function speed()
+	game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").WalkSpeed = SpeedAmout.Text
+end
+
+local function jump()
+	game.Players.LocalPlayer.Character:FindFirstChild("Humanoid").JumpHeight = JumpAmout.Text
+end
+
+local function InfinityYield()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+end
+
+local function dex()
+	loadstring(game:HttpGet("https://cdn.wearedevs.net/scripts/Dex%20Explorer.txt"))()
+end
+
+local function V1()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/barsmeyy/-/refs/heads/main/%D0%B0%D0%B3%D1%88%D0%BB%D0%B0%D0%B6.txt"))()
+end
+
+local function teleport()
+	loadstring(game:HttpGet("https://pastebin.com/raw/AbDM2er1"))()
+end
+
+local function Size()
+	local args = {
+		[1] = "CharacterSizeDown",
+		[2] = 0.5
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Clothe1s"):FireServer(unpack(args))
+end
+
+local function Acs()
+	local args = {
+		[1] = "AskIfIdAvailable",
+		[2] = "24114402"
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Clothe1s"):FireServer(unpack(args))
+	local args = {
+		[1] = "AskIfIdAvailable",
+		[2] = "24112667"
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Clothe1s"):FireServer(unpack(args))
+	local args = {
+		[1] = "AskIfIdAvailable",
+		[2] = "24114402"
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Clothe1s"):FireServer(unpack(args))
+	local args = {
+		[1] = "AskIfIdAvailable",
+		[2] = "33070696"
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Clothe1s"):FireServer(unpack(args))
+end
+
+local function RemoveAcs()
+	local args = {
+		[1] = "wear",
+		[2] = 33070696 
+	}
+	task.wait(0.1)
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Updat1eAvata1r"):FireServer(unpack(args))
+	local args = {
+		[1] = "wear",
+		[2] = 24114402
+	}
+	task.wait(0.1)
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Updat1eAvata1r"):FireServer(unpack(args))
+	local args = {
+		[1] = "wear",
+		[2] = 24112667
+	}
+	task.wait(0.1)
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Updat1eAvata1r"):FireServer(unpack(args))
+	local args = {
+		[1] = "wear",
+		[2] = 24114402
+	}
+	task.wait(0.1)
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Updat1eAvata1r"):FireServer(unpack(args))
+end
+local deb = false
+local function GetGunv()
+	if deb == false then
+		deb = true
+		local args = {
+			[1] = "PickingTools",
+			[2] = "Assault"
+		}
+		game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args)) 
+		task.wait(0.1)
+		local args = {
+			[1] = "PickingTools",
+			[2] = "Glock"
+		}
+
+		game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+		task.wait(0.1)
+		local args = {
+			[1] = "PickingTools",
+			[2] = "Shotgun"
+		}
+
+		game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+		task.wait(0.1)
+		local args = {
+			[1] = "PickingTools",
+			[2] = "GlockBrown"
+		}
+
+		game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+		task.wait(0.1)
+		local args = {
+			[1] = "PickingTools",
+			[2] = "Sniper"
+		}
+
+		game:GetService("ReplicatedStorage").RE:FindFirstChild("1Too1l"):InvokeServer(unpack(args))
+
+		task.wait(0.1)
+		for i, b in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+			b.Parent = workspace:FindFirstChild(game.Players.LocalPlayer.Name)
+		end
+		deb = false
+	else
+		print("Button cooldown.")
+
+	end
+end
+
+local function invis()
+	loadstring(game:HttpGet('https://pastebin.com/raw/3Rnd9rHf'))()
+end
+
+local function ScaryHead()
+	local args = {
+		[1] = "AskIfIdAvailable",
+		[2] = "13017670923"
+	}
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Clothe1s"):FireServer(unpack(args))
+end
+
+local function ScaryBody()
+	local args = {
+		[1] = "AskIfIdAvailable",
+		[2] = "87859729921468"
+	}
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Clothe1s"):FireServer(unpack(args))
+end
+
+local function BellSound()
+	local args = {
+		[1] = game.Players.LocalPlayer.Character.HumanoidRootPart,
+		[2] = game:GetService("Players").LocalPlayer.Character.Assault.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Assault.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Assault.GunScript_Local.HitEffect,
+		[7] = 6891548543,
+		[8] = 6891548543,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = game.Players.LocalPlayer.Character.HumanoidRootPart,
+		[2] = game:GetService("Players").LocalPlayer.Character.GlockBrown.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.GlockBrown.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.GlockBrown.GunScript_Local.HitEffect,
+		[7] = 6891548543,
+		[8] = 6891548543,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = game.Players.LocalPlayer.Character.HumanoidRootPart,
+		[2] = game:GetService("Players").LocalPlayer.Character.Sniper.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Sniper.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Sniper.GunScript_Local.HitEffect,
+		[7] = 6891548543,
+		[8] = 6891548543,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = game:GetService("Players").LocalPlayer.Character.Sniper.Handle,
+		[2] = 6891548543,
+		[3] = 0.95
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1nSound1s"):FireServer(unpack(args))
+	local args = {
+		[1] = workspace.Model.Street.Street,
+		[2] = game:GetService("Players").LocalPlayer.Character.Shotgun.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Shotgun.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Shotgun.GunScript_Local.HitEffect,
+		[7] = 6891548543,
+		[8] = 6891548543,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = workspace.Model.Street.Street,
+		[2] = game:GetService("Players").LocalPlayer.Character.Glock.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Glock.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Glock.GunScript_Local.HitEffect,
+		[7] = 6891548543,
+		[8] = 6891548543,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+end
+
+local function ChildLaughtSound()
+	local args = {
+		[1] = game.Players.LocalPlayer.Character.HumanoidRootPart,
+		[2] = game:GetService("Players").LocalPlayer.Character.Assault.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Assault.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Assault.GunScript_Local.HitEffect,
+		[7] = 109263303377273,
+		[8] = 109263303377273,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = game.Players.LocalPlayer.Character.HumanoidRootPart,
+		[2] = game:GetService("Players").LocalPlayer.Character.GlockBrown.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.GlockBrown.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.GlockBrown.GunScript_Local.HitEffect,
+		[7] = 109263303377273,
+		[8] = 109263303377273,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = game.Players.LocalPlayer.Character.HumanoidRootPart,
+		[2] = game:GetService("Players").LocalPlayer.Character.Sniper.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Sniper.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Sniper.GunScript_Local.HitEffect,
+		[7] = 109263303377273,
+		[8] = 109263303377273,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = game:GetService("Players").LocalPlayer.Character.Sniper.Handle,
+		[2] = 109263303377273,
+		[3] = 0.95
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1nSound1s"):FireServer(unpack(args))
+	local args = {
+		[1] = workspace.Model.Street.Street,
+		[2] = game:GetService("Players").LocalPlayer.Character.Shotgun.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Shotgun.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Shotgun.GunScript_Local.HitEffect,
+		[7] = 109263303377273,
+		[8] = 109263303377273,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = workspace.Model.Street.Street,
+		[2] = game:GetService("Players").LocalPlayer.Character.Glock.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Glock.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Glock.GunScript_Local.HitEffect,
+		[7] = 109263303377273,
+		[8] = 109263303377273,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+end
+
+local function Scream1()
+	local args = {
+		[1] = game.Players.LocalPlayer.Character.HumanoidRootPart,
+		[2] = game:GetService("Players").LocalPlayer.Character.Assault.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Assault.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Assault.GunScript_Local.HitEffect,
+		[7] = 270145703,
+		[8] = 270145703,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = game.Players.LocalPlayer.Character.HumanoidRootPart,
+		[2] = game:GetService("Players").LocalPlayer.Character.GlockBrown.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.GlockBrown.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.GlockBrown.GunScript_Local.HitEffect,
+		[7] = 270145703,
+		[8] = 270145703,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = game.Players.LocalPlayer.Character.HumanoidRootPart,
+		[2] = game:GetService("Players").LocalPlayer.Character.Sniper.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Sniper.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Sniper.GunScript_Local.HitEffect,
+		[7] = 270145703,
+		[8] = 270145703,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = game:GetService("Players").LocalPlayer.Character.Sniper.Handle,
+		[2] = 270145703,
+		[3] = 0.95
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1nSound1s"):FireServer(unpack(args))
+	local args = {
+		[1] = workspace.Model.Street.Street,
+		[2] = game:GetService("Players").LocalPlayer.Character.Shotgun.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Shotgun.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Shotgun.GunScript_Local.HitEffect,
+		[7] = 270145703,
+		[8] = 270145703,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = workspace.Model.Street.Street,
+		[2] = game:GetService("Players").LocalPlayer.Character.Glock.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Glock.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Glock.GunScript_Local.HitEffect,
+		[7] = 270145703,
+		[8] = 270145703,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+end
+
+local function Scream2()
+	local args = {
+		[1] = game.Players.LocalPlayer.Character.HumanoidRootPart,
+		[2] = game:GetService("Players").LocalPlayer.Character.Assault.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Assault.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Assault.GunScript_Local.HitEffect,
+		[7] = 7236490488,
+		[8] = 7236490488,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = game.Players.LocalPlayer.Character.HumanoidRootPart,
+		[2] = game:GetService("Players").LocalPlayer.Character.GlockBrown.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.GlockBrown.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.GlockBrown.GunScript_Local.HitEffect,
+		[7] = 7236490488,
+		[8] = 7236490488,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = game.Players.LocalPlayer.Character.HumanoidRootPart,
+		[2] = game:GetService("Players").LocalPlayer.Character.Sniper.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Sniper.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Sniper.GunScript_Local.HitEffect,
+		[7] = 7236490488,
+		[8] = 7236490488,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = game:GetService("Players").LocalPlayer.Character.Sniper.Handle,
+		[2] = 7236490488,
+		[3] = 0.95
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1nSound1s"):FireServer(unpack(args))
+	local args = {
+		[1] = workspace.Model.Street.Street,
+		[2] = game:GetService("Players").LocalPlayer.Character.Shotgun.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Shotgun.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Shotgun.GunScript_Local.HitEffect,
+		[7] = 7236490488,
+		[8] = 7236490488,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = workspace.Model.Street.Street,
+		[2] = game:GetService("Players").LocalPlayer.Character.Glock.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Glock.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Glock.GunScript_Local.HitEffect,
+		[7] = 7236490488,
+		[8] = 7236490488,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+
+end
+
+local function Ahh()
+	local args = {
+		[1] = game.Players.LocalPlayer.Character.HumanoidRootPart,
+		[2] = game:GetService("Players").LocalPlayer.Character.Assault.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Assault.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Assault.GunScript_Local.HitEffect,
+		[7] = 113326842510307,
+		[8] = 113326842510307,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = game.Players.LocalPlayer.Character.HumanoidRootPart,
+		[2] = game:GetService("Players").LocalPlayer.Character.GlockBrown.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.GlockBrown.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.GlockBrown.GunScript_Local.HitEffect,
+		[7] = 113326842510307,
+		[8] = 113326842510307,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = game.Players.LocalPlayer.Character.HumanoidRootPart,
+		[2] = game:GetService("Players").LocalPlayer.Character.Sniper.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Sniper.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Sniper.GunScript_Local.HitEffect,
+		[7] = 113326842510307,
+		[8] = 113326842510307,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = game:GetService("Players").LocalPlayer.Character.Sniper.Handle,
+		[2] = 113326842510307,
+		[3] = 0.95
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1nSound1s"):FireServer(unpack(args))
+	local args = {
+		[1] = workspace.Model.Street.Street,
+		[2] = game:GetService("Players").LocalPlayer.Character.Shotgun.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Shotgun.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Shotgun.GunScript_Local.HitEffect,
+		[7] = 113326842510307,
+		[8] = 113326842510307,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+	local args = {
+		[1] = workspace.Model.Street.Street,
+		[2] = game:GetService("Players").LocalPlayer.Character.Glock.Handle,
+		[3] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[4] = game:GetService("Players").LocalPlayer.Character:FindFirstChild("HumanoidRootPart").Position,
+		[5] = game:GetService("Players").LocalPlayer.Character.Glock.GunScript_Local.MuzzleEffect,
+		[6] = game:GetService("Players").LocalPlayer.Character.Glock.GunScript_Local.HitEffect,
+		[7] = 113326842510307,
+		[8] = 113326842510307,
+		[9] = {
+			[1] = true
+		},
+		[10] = {
+			[1] = 25,
+			[2] = Vector3.new(0.25, 0.25, 100),
+			[3] = BrickColor.new(24),
+			[4] = 0.25,
+			[5] = Enum.Material.SmoothPlastic,
+			[6] = 0.25
+		},
+		[11] = true,
+		[12] = false
+	}
+
+	game:GetService("ReplicatedStorage").RE:FindFirstChild("1Gu1n"):FireServer(unpack(args))
+end
+
+local function Hide()
+	for i, v in pairs(Elements) do
+		if v.Visible == true then
+			v.Visible = false
+		else
+			v.Visible = true
+		end
+	end
+end
+
+SpeedAmout:GetPropertyChangedSignal("Text"):Connect(speed)
+JumpAmout:GetPropertyChangedSignal("Text"):Connect(jump)
+GetGun.MouseButton1Click:Connect(GetGunv)
+BellSoundButton.MouseButton1Click:Connect(BellSound)
+LaughSoundButton.MouseButton1Click:Connect(ChildLaughtSound)
+YieldButton.MouseButton1Click:Connect(InfinityYield)
+Scream1SoundButton.MouseButton1Click:Connect(Scream1)
+Scream2SoundButton.MouseButton1Click:Connect(Scream2)
+CloseUIButton.MouseButton1Click:Connect(function()
+	plr.PlayerGui.Main:Destroy()
+end)
+HideUIButton.MouseButton1Click:Connect(Hide)
+AhhSoundButton.MouseButton1Click:Connect(Ahh)
+AcsSoundOnButton.MouseButton1Click:Connect(Acs)
+AcsSoundOffButton.MouseButton1Click:Connect(RemoveAcs)
+SizeButton.MouseButton1Click:Connect(Size)
+ScaryHeadButton.MouseButton1Click:Connect(ScaryHead)
+ScaryBodyButton.MouseButton1Click:Connect(ScaryBody)
+DexButton.MouseButton1Click:Connect(dex)
+InvisGuiButton.MouseButton1Click:Connect(invis)
+TeleportButton.MouseButton1Click:Connect(teleport)
+V1VersionButton.MouseButton1Click:Connect(V1)
